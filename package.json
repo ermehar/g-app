@@ -1,0 +1,23 @@
+{
+  "author": "Yashwant <yashwantmehar@gmail.com>",
+  "name": "gplay-challange",
+  "version": "0.0.0",
+  "description": "Full Stack Developer Challenge.",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "^2.6.1",
+    "express": "~4.16.0",
+    "google-play-scraper": "^6.2.3",
+    "http-errors": "^1.6.3",
+    "jquery": "^3.3.1",
+    "mongodb": "^3.1.13",
+    "morgan": "~1.9.0",
+    "poper": "^0.1.1"
+  }
+}

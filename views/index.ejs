@@ -1,0 +1,55 @@
+<%- include('includes/header'); %>
+<%- include('includes/nav'); %>
+
+  <main role="main">
+    <%- include('includes/getAppsSection'); %>
+
+    <div class="container">
+      <div class="row mar-t2" >
+        <% if (apps.length <= 0){%>
+           <div class="col-md-12 mar-b-10">
+            <div class="alert alert-info">
+              <b>Sorry</b> We do not found the application in our database. .
+            </div>
+          </div>
+        <% } %>
+        <% if (apps.length > 0){%>
+          <% var j=1; %>
+          <% for(let i=0; i < apps.length; i++) { %>  
+            <div class="col-3">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <a href="appdetails?pkg=<%= apps[i].appId %>">
+                      <img class="img-fluid" src="<%= apps[i].icon %>" alt="card image">
+                    </a>
+                  </p>
+                  <a href="appdetails?pkg=<%= apps[i].appId %>">
+                    <h3 class="card-title app-title">
+                      <%= (i+1) + ". " + apps[i].title %> <span class="paragraph-end"></span>
+                    </h3>
+                  </a>
+                  <p class="card-text developer-name"><%= apps[i].developer %></p>
+                  <a href="appdetails?pkg=<%= apps[i].appId %>" class="btn btn-primary btn-sm"> Details </a>
+                </div>
+              </div>
+            </div>
+            <% j++; 
+
+              if(j>=5){ %>
+                </div>
+                <div class="row mar-t2">
+              <% j=1; } %>
+
+          <% } %>
+
+        <% } %>
+      
+
+      </div>
+    
+    </div>
+
+  </main>
+
+<%- include('includes/footer'); %>
